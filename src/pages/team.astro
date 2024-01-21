@@ -1,0 +1,50 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import DepartmentSection from '@components/Department-Section';
+
+const data = [
+	{
+		title: 'Program Design',
+		description: 'A description of the Engineering department.',
+		image: 'assets/departments/sample_cover.jpg',
+		members: ['John Doe', 'Jane Smith', 'Bob Johnson'],
+	},
+	{
+		title: 'Marketing',
+		description: 'A description of the Marketing department.',
+		image: 'assets/departments/sample_cover.jpg',
+		members: ['Alice Brown', 'Charlie Davis', 'Eva Green'],
+	},
+	{
+		title: 'PR & Legal',
+		description: 'A description of the Finance department.',
+		image: 'assets/departments/sample_cover.jpg',
+		members: ['Frank White', 'Grace Miller', 'Henry Turner'],
+	},
+	{
+		title: 'Community & Recruiting',
+		description: 'A description of the Design department.',
+		image: 'assets/departments/sample_cover.jpg',
+		members: ['David Wilson', 'Emily Clark', 'George Harris'],
+	},
+];
+---
+
+<Layout title="team">
+	<div class="">
+		<h1 class="mb-8 p-1 text-8xl">Departments</h1>
+		<div class="mx-auto grid grid-cols-1 justify-items-center gap-12 lg:grid-cols-2">
+			{
+				data.map((department) => (
+					<DepartmentSection
+						title={department.title}
+						description={department.description}
+						imageURL={department.image}
+						members={department.members}
+					/>
+				))
+			}
+		</div>
+		<h1 class="my-8 p-1 text-8xl">Team members</h1>
+	</div>
+</Layout>

@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @import './fonts.scss';
 @import './variables.scss';
 
@@ -18,17 +17,17 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-    background-image: linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);
+	background-image: linear-gradient(to top, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+	margin: auto;
+	padding: 1rem;
+	width: 800px;
+	max-width: calc(100% - 2rem);
+	color: white;
+	font-size: 20px;
+	line-height: 1.6;
 }
 
 code {
