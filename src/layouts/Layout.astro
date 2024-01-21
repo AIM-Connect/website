@@ -1,7 +1,7 @@
 ---
-import '@styles/global.scss';
 import Footer from '@components/Footer.astro';
 import Header from '@components/Header';
+import BaseLayout from '@layouts/BaseLayout.astro';
 
 interface Props {
 	title: string;
@@ -10,24 +10,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="min-h-screen">
-			<Header client:visible />
-			<main id="main-content">
-				<slot />
-			</main>
-			<Footer />
-		</div>
-	</body>
-</html>
+<BaseLayout title={title}>
+	<Header client:visible />
+	<main class="m-auto w-[800px] max-w-[calc(100%-2rem)] pt-12">
+		<slot />
+	</main>
+	<Footer />
+</BaseLayout>
